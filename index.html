@@ -25,7 +25,6 @@
         </div>
         <div class="data-item">
           <h3>
-            Current UTC Time:
             <span data-testid="currentUTCTime" id="currentUTC"></span>
           </h3>
         </div>
@@ -51,6 +50,10 @@
         });
 
         const currentUTC = currentDate.getTime();
+        // const currentUTC = currentDate.toLocaleTimeString("en-NG", {
+        //   timeZone: "UTC",
+        // });
+
         document.getElementById("currentDay").textContent = currentDay;
         document.getElementById("currentUTC").textContent = currentUTC;
       }
