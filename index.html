@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Personal Data Showcase</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="data-item" data-testid="slackDisplayImage">
+        <div class="profileImg">
+          <img
+            src="./assets/profile.png"
+            alt="WebHav0cx"
+            style="max-width: 100%"
+          />
+        </div>
+      </div>
+      <div class="container">
+        <div class="data-item" data-testid="slackUserName">
+          <h1>Slack Name: WebHav0cx</h1>
+        </div>
+
+        <div class="data-item" data-testid="currentDayOfTheWeek">
+          <h3>Current Day of the Week: <span id="currentDay"></span></h3>
+        </div>
+        <div class="data-item" data-testid="currentUTCTime">
+          <h3>Current UTC Time: <span id="currentUTC"></span></h3>
+        </div>
+        <div class="data-item" data-testid="myTrack">
+          <h2>Track: <span>Front End Track</span></h2>
+        </div>
+        <div class="github-link" data-testid="githubURL">
+          <a href="https://github.com/WebHav0cx/HNGx.git" target="_blank"
+            >GitHub Repo</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateDateTime() {
+        const currentDate = new Date();
+        const currentDay = currentDate.toLocaleDateString("en-NG", {
+          weekday: "long",
+        });
+
+        const currentUTC = currentDate.toLocaleTimeString("en-NG", {
+          timeZone: "UTC",
+        });
+
+        document.getElementById("currentDay").textContent = currentDay;
+        document.getElementById("currentUTC").textContent = currentUTC;
+      }
+
+      updateDateTime();
+
+      setInterval(updateDateTime, 1000);
+    </script>
+  </body>
+</html>
