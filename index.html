@@ -50,10 +50,7 @@
           weekday: "long",
         });
 
-        const currentUTC = currentDate.toLocaleTimeString("en-NG", {
-          timeZone: "UTC",
-        });
-
+        const currentUTC = currentDate.getTime();
         document.getElementById("currentDay").textContent = currentDay;
         document.getElementById("currentUTC").textContent = currentUTC;
       }
